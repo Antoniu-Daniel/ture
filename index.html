@@ -79,7 +79,6 @@
     <div id="calendarContainer"></div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
             const monthSelect = document.getElementById('monthSelect');
             const yearButtonsContainer = document.getElementById('yearButtons');
             const monthNamesRo = [
@@ -333,13 +332,11 @@
                     message = `De ${holidayName} ${targetYear} sunt ${closestWork.shift} ${closestWork.dayName}, ${closestWork.date.getDate()} ${monthName} ${closestWork.date.getFullYear()}`;
                 }
 
-                //document.getElementById('holidayResult').innerHTML = ${message};
-                alert(message);
+                document.getElementById('holidayResult').innerHTML = ${message};
             }
 
             initializeControls();
             updateCalendar();
-        });
     </script>
 </body>
 </html>
