@@ -322,6 +322,10 @@
       checkHoliday('revelion');
     }
 
+    const months = ['ianuarie', 'februarie', 'martie', 'aprilie', 'mai', 'iunie',
+          'iulie', 'august', 'septembrie', 'octombrie', 'noiembrie', 'decembrie'
+        ];
+
     function checkHoliday(holiday) {
       const currentDate = new Date();
       const currentYear = currentDate.getFullYear();
@@ -346,11 +350,8 @@
       const closestWork = findClosestWorkShift(holidayDate, tura);
       let message;
       if (holiday === 'revelion') {
-        message = `De ${holidayName} ${targetYear + 1} sunt ${closestWork.shift} ${closestWork.dayName}, ${closestWork.date.getDate()} decembrie ${closestWork.date.getFullYear()}`;
+        message = `De ${holidayName} ${targetYear + 1} sunt ${closestWork.shift} ${closestWork.dayName}, ${closestWork.date.getDate()} ${months[closesWork.date.getMonth()]} ${closestWork.date.getFullYear()}`;
       } else {
-        const months = ['ianuarie', 'februarie', 'martie', 'aprilie', 'mai', 'iunie',
-          'iulie', 'august', 'septembrie', 'octombrie', 'noiembrie', 'decembrie'
-        ];
         const monthName = months[closestWork.date.getMonth()];
         message = `De ${holidayName} ${targetYear} sunt ${closestWork.shift} ${closestWork.dayName}, ${closestWork.date.getDate()} ${monthName} ${closestWork.date.getFullYear()}`;
       }
