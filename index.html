@@ -339,7 +339,7 @@
           holidayDate = new Date(year, 11, 25); // 25 decembrie
           holidayName = 'Crăciun';
         } else if (holiday === 'revelion') {
-          holidayDate = new Date(year, 11, 31); // 31 decembrie
+          holidayDate = new Date(year, 1, 1); // 31 decembrie
           holidayName = 'Revelion';
         }
         if (holidayDate > currentDate) {
@@ -350,7 +350,7 @@
       const closestWork = findClosestWorkShift(holidayDate, tura);
       let message;
       if (holiday === 'revelion') {
-        message = `De ${holidayName} ${targetYear + 1} sunt ${closestWork.shift} ${closestWork.dayName}, ${closestWork.date.getDate()} ${months[closesWork.date.getMonth()]} ${closestWork.date.getFullYear()}`;
+        message = `De ${holidayName} ${targetYear} sunt ${closestWork.shift} ${closestWork.dayName}, ${closestWork.date.getDate()} ${months[closesWork.date.getMonth()]} ${closestWork.date.getFullYear()}`;
       } else {
         const monthName = months[closestWork.date.getMonth()];
         message = `De ${holidayName} ${targetYear} sunt ${closestWork.shift} ${closestWork.dayName}, ${closestWork.date.getDate()} ${monthName} ${closestWork.date.getFullYear()}`;
