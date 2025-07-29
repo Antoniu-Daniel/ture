@@ -291,7 +291,7 @@
       let minDistance = Infinity;
       for (let offset = -10; offset <= 10; offset++) {
         const checkDate = new Date(holidayDate);
-        checkDate.setDate(checkDate.getDate() + offset);
+        checkDate.setDate(checkDate.getDate() + offset - 12 * 3600 * 1000);
         const daysDiff = Math.ceil((checkDate - date0) / 86400000);
         const shiftType = (daysDiff + tura) % 4;
         // Doar turile de zi (2) și noapte (3)
